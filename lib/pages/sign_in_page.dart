@@ -59,11 +59,13 @@ class SignInPage extends StatelessWidget {
                     ),
                     SizedBox(width: 16),
                     Expanded(
-                        child: TextFormField(
-                      style: primaryTextStyle,
-                      decoration: InputDecoration.collapsed(
-                          hintText: 'Your Email Address',
-                          hintStyle: subtitleTextStyle),
+                        child: Center(
+                      child: TextFormField(
+                        style: primaryTextStyle,
+                        decoration: InputDecoration.collapsed(
+                            hintText: 'Your Email Address',
+                            hintStyle: subtitleTextStyle),
+                      ),
                     )),
                   ]),
                 )),
@@ -102,12 +104,14 @@ class SignInPage extends StatelessWidget {
                     ),
                     SizedBox(width: 16),
                     Expanded(
-                        child: TextFormField(
-                      style: primaryTextStyle,
-                      obscureText: true,
-                      decoration: InputDecoration.collapsed(
-                          hintText: 'Your Password',
-                          hintStyle: subtitleTextStyle),
+                        child: Center(
+                      child: TextFormField(
+                        style: primaryTextStyle,
+                        obscureText: true,
+                        decoration: InputDecoration.collapsed(
+                            hintText: 'Your Password',
+                            hintStyle: subtitleTextStyle),
+                      ),
                     )),
                   ]),
                 )),

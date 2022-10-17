@@ -202,11 +202,55 @@ class SignUpPage extends StatelessWidget {
       );
     }
 
+    Widget confirmPassword() {
+      return Container(
+        margin: EdgeInsets.only(top: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Confirm Password',
+              style:
+                  primaryTextStyle.copyWith(fontSize: 16, fontWeight: medium),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Container(
+                height: 50,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16,
+                ),
+                decoration: BoxDecoration(
+                    color: backgroundColor2,
+                    borderRadius: BorderRadius.circular(12)),
+                child: Center(
+                  child: Row(children: [
+                    Image.asset(
+                      'assets/icon_password.png',
+                      width: 17,
+                    ),
+                    SizedBox(width: 16),
+                    Expanded(
+                        child: TextFormField(
+                      style: primaryTextStyle,
+                      obscureText: true,
+                      decoration: InputDecoration.collapsed(
+                          hintText: 'Confirm Your Password',
+                          hintStyle: subtitleTextStyle),
+                    )),
+                  ]),
+                )),
+          ],
+        ),
+      );
+    }
+
     Widget signUpButton() {
       return Container(
         height: 50,
         width: double.infinity,
-        margin: EdgeInsets.only(top: 30),
+        margin: EdgeInsets.only(top: 30, bottom: 140),
         child: TextButton(
           onPressed: () {
             Navigator.pushNamed(context, '/home');
@@ -252,23 +296,22 @@ class SignUpPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: defaultMargin,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              header(),
-              nameInput(),
-              usernameInput(),
-              emailInput(),
-              passwordInput(),
-              signUpButton(),
-              Spacer(),
-              footer(),
-            ],
-          ),
-        ),
+            margin: EdgeInsets.symmetric(
+              horizontal: defaultMargin,
+            ),
+            child: ListView(
+              children: [
+                header(),
+                nameInput(),
+                usernameInput(),
+                emailInput(),
+                passwordInput(),
+                confirmPassword(),
+                signUpButton(),
+                Spacer(),
+                footer(),
+              ],
+            )),
       ),
     );
   }
